@@ -259,25 +259,91 @@
   </div>
 
 </section>
-<form action="https://formsubmit.co/00311201@proton.me" method="POST" style="display: flex; flex-direction: column; gap: 16px; max-width: 500px; margin: 0 auto;">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pré-Inscrição • TechBusiness Academy</title>
+  <style>
+    body {
+      background-color: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  <input type="text" name="nome" placeholder="Seu nome (opcional)" style="padding:12px; border-radius:6px; border:1px solid #ccc;">
+    .container {
+      max-width: 600px;
+      background-color: #e3f2fd;
+      margin: 80px auto;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-  <input type="email" name="email" placeholder="Seu e-mail (opcional)" style="padding:12px; border-radius:6px; border:1px solid #ccc;">
+    .container h2 {
+      color: #0d47a1;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
 
-  <input type="text" name="whatsapp" placeholder="Seu WhatsApp (opcional)" style="padding:12px; border-radius:6px; border:1px solid #ccc;">
+    .container p {
+      color: #333;
+      font-size: 1em;
+      margin-bottom: 30px;
+    }
 
-  <textarea name="mensagem" placeholder="Digite aqui o que deseja..." rows="6" required style="padding:12px; border-radius:6px; border:1px solid #ccc;"></textarea>
+    .container input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
 
-  <!-- Redirecionamento para página de agradecimento -->
-  <input type="hidden" name="_next" value="https://nanobionics2.github.io/nexialbusiness/obrigado.html">
+    .container button {
+      background-color: #0d47a1;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-  <!-- Desativa captcha do formsubmit -->
-  <input type="hidden" name="_captcha" value="false">
+    .container button:hover {
+      background-color: #1565c0;
+    }
 
-  <button type="submit" style="padding: 12px; border: none; border-radius: 6px; background-color: #0d47a1; color: white; font-weight: bold; cursor: pointer;">Enviar Solicitação</button>
+    .icon {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">📩</div>
+    <h2>Pré-Inscrição TechBusiness Academy</h2>
+    <p>Deixe seu e-mail ou WhatsApp para receber informações sobre o curso que deseja fazer e participar dos lançamentos!</p>
 
-</form>
+    <form action="https://formsubmit.co/00311201@proton.me" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome">
+      <input type="email" name="email" placeholder="Seu e-mail">
+      <input type="text" name="whatsapp" placeholder="Seu WhatsApp">
+      <textarea name="mensagem" rows="4" placeholder="Qual curso deseja? Deixe sua mensagem..."></textarea>
+      <input type="hidden" name="_next" value="https://nanobionics2.github.io/nexialbusiness/obrigado.html">
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
 
 
     </section>
