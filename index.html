@@ -3,236 +3,337 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NexialBusiness Academy</title>
+  <meta name="description" content="NexialBusiness: formação interdisciplinar para empresários inovadores e profissionais empreendedores criarem novos produtos, serviços, negócios e mercados por meio da interconexão entre áreas do conhecimento." />
+  <title>NexialBusiness | Conhecimento sem fronteiras para criar novos negócios</title>
   <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0b1830;
+      --panel: #0e1d35;
+      --ink: #f7fbff;
+      --muted: #afbdd2;
+      --cyan: #19d6e8;
+      --blue: #3e7bff;
+      --gold: #e7c272;
+      --line: rgba(255,255,255,.10);
+      --card: rgba(255,255,255,.045);
+      --shadow: 0 18px 50px rgba(0,0,0,.28);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #2c3e50;
       margin: 0;
-      padding: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(25,214,232,.10), transparent 24%),
+        radial-gradient(circle at 85% 5%, rgba(62,123,255,.14), transparent 28%),
+        linear-gradient(180deg, var(--bg), #091525 45%, #07111f 100%);
+      line-height: 1.6;
     }
-
+    a { color: inherit; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
     header {
-      background-color: #0d47a1;
-      color: white;
-      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7,17,31,.82);
+      border-bottom: 1px solid var(--line);
     }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      text-align: center;
-      margin: 0;
-    }
-
-    nav {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    .hero {
-      background-color: #e3f2fd;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 32px;
-      color: #0d47a1;
-    }
-
-    .hero p {
-      font-size: 18px;
-      margin: 15px 0 30px;
-    }
-
-    .cta {
-      background-color: #0d47a1;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .courses {
+    .nav {
+      min-height: 76px;
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { text-decoration: none; font-weight: 850; font-size: 1.35rem; letter-spacing: -.03em; }
+    .brand span { color: var(--cyan); }
+    nav { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: #dbe7f7; font-size: .95rem; font-weight: 650; }
+    .nav-cta { padding: 10px 16px; border: 1px solid rgba(25,214,232,.45); border-radius: 999px; }
+
+    .hero { padding: 92px 0 70px; text-align: center; }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(25,214,232,.25);
+      background: rgba(25,214,232,.06);
+      color: #bff8ff;
+      font-size: .83rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-weight: 750;
+    }
+    h1 {
+      max-width: 980px;
+      margin: 24px auto 18px;
+      font-size: clamp(2.8rem, 7vw, 5.7rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+    }
+    .gradient {
+      background: linear-gradient(90deg, #fff 10%, #70ecf5 52%, #79a7ff 100%);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .lead {
+      max-width: 850px;
+      margin: 0 auto;
+      color: #c4d1e2;
+      font-size: clamp(1.08rem, 2vw, 1.34rem);
+    }
+    .hero strong { color: white; }
+    .hero-actions { margin-top: 34px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
-      padding: 40px 20px;
-      gap: 20px;
-    }
-
-    .course-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      padding: 20px;
-      width: 300px;
-      text-align: center;
-    }
-
-    .course-card h3 {
-      color: #0d47a1;
-      margin-top: 0;
-    }
-
-    .course-card p {
-      margin: 10px 0 20px;
-    }
-
-    .course-card a {
-      background-color: #1565c0;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 12px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: linear-gradient(135deg, var(--cyan), var(--blue)); color: #04121d; box-shadow: 0 14px 36px rgba(25,214,232,.18); }
+    .btn-secondary { border: 1px solid var(--line); background: rgba(255,255,255,.04); color: white; }
+
+    .audience {
+      margin: 30px auto 0;
+      max-width: 870px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+    }
+    .audience div {
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 14px;
+      color: #dce7f6;
+      font-weight: 700;
     }
 
-    footer {
-      background-color: #0d47a1;
-      color: white;
+    section { padding: 78px 0; }
+    .section-head { max-width: 820px; margin-bottom: 34px; }
+    .section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
+    .kicker { color: var(--cyan); text-transform: uppercase; letter-spacing: .13em; font-size: .78rem; font-weight: 800; }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.06; letter-spacing: -.045em; margin: 10px 0 14px; }
+    .section-head p { color: var(--muted); font-size: 1.08rem; }
+
+    .pillars { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+    .pillar, .course-card, .network-card, .authority-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.028));
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .pillar { padding: 24px; }
+    .num { color: var(--cyan); font-weight: 900; font-size: .82rem; letter-spacing: .11em; }
+    .pillar h3 { margin: 10px 0 8px; font-size: 1.15rem; }
+    .pillar p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+    .outcomes { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .outcome { padding: 24px; border-top: 2px solid rgba(25,214,232,.65); background: rgba(255,255,255,.035); border-radius: 0 0 16px 16px; }
+    .outcome h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .outcome p { color: var(--muted); margin: 0; font-size: .95rem; }
+
+    .network-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .network-card, .authority-card { padding: 30px; }
+    .network-card h3, .authority-card h3 { margin: 0 0 10px; font-size: 1.45rem; }
+    .network-card p, .authority-card p { color: var(--muted); }
+    .feature-list { margin: 20px 0 0; padding: 0; list-style: none; display: grid; gap: 11px; }
+    .feature-list li { color: #e4edf8; padding-left: 24px; position: relative; }
+    .feature-list li::before { content: "→"; position: absolute; left: 0; color: var(--cyan); font-weight: 900; }
+    .authority-card { background: linear-gradient(155deg, rgba(231,194,114,.09), rgba(255,255,255,.03)); }
+    .authority-card .accent { color: var(--gold); font-weight: 850; }
+
+    .courses-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .course-card { padding: 24px; display: flex; flex-direction: column; min-height: 240px; }
+    .course-tag { color: #8fdbe7; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 800; }
+    .course-card h3 { font-size: 1.35rem; margin: 10px 0; line-height: 1.15; }
+    .course-card p { color: var(--muted); margin: 0 0 20px; flex: 1; }
+    .course-card a { text-decoration: none; font-weight: 800; color: #c8faff; }
+
+    .statement {
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
     }
+    .statement .big { max-width: 920px; margin: 0 auto; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.05; font-weight: 850; letter-spacing: -.05em; }
+    .statement p { max-width: 790px; margin: 22px auto 0; color: var(--muted); }
 
-    footer a {
-      color: #bbdefb;
-      text-decoration: none;
+    .final-cta { text-align: center; }
+    .final-cta p { color: var(--muted); max-width: 720px; margin: 0 auto 26px; }
+
+    footer { padding: 34px 0 44px; border-top: 1px solid var(--line); color: #8ea0b9; font-size: .88rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer a { color: #b9cbe1; text-decoration: none; }
+    .disclaimer { margin-top: 20px; max-width: 980px; font-size: .8rem; color: #7587a1; }
+
+    @media (max-width: 900px) {
+      nav a:not(.nav-cta) { display: none; }
+      .pillars { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .outcomes, .courses-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .network-wrap { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .hero { padding-top: 62px; }
+      .audience, .pillars, .outcomes, .courses-grid { grid-template-columns: 1fr; }
+      .nav { min-height: 66px; }
+      h1 { font-size: 3rem; }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="container">
-      <h1>NexialBusiness Academy</h1>
+    <div class="container nav">
+      <a class="brand" href="#top">Nexial<span>Business</span></a>
       <nav>
-        <a href="#">Início</a>
-        <a href="#courses">Todos os Cursos</a>
-        <a href="#">Sobre Nós</a>
-        <a href="#">Contato</a>
+        <a href="#metodo">Método</a>
+        <a href="#possibilidades">Possibilidades</a>
+        <a href="#network">Network</a>
+        <a href="#programas">Programas</a>
+        <a class="nav-cta" href="mailto:nexialbusiness@proton.me">Fale conosco</a>
       </nav>
     </div>
   </header>
 
-  <main>
-   <section class="hero">
-  <h2>Cursos Interdisciplinares para Empreendedores Visionários</h2>
-  <p><strong>Aprenda com uma das maiores mentes interdisciplinares do mundo e crie soluções que transformam o mercado com criatividade e tecnologia.</strong></p>
-  <p>Explore temas como medicina, engenharia, inteligência artificial, direito e muito mais — todos conectados à prática real de mercado.</p>
-  <a href="#courses" class="cta">Conheça os Cursos</a>
-</section>
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Para empresários inovadores e profissionais empreendedores</div>
+        <h1>Interconecte conhecimentos. <span class="gradient">Crie o que ainda não existe.</span></h1>
+        <p class="lead"><strong>NexialBusiness é uma formação para transformar conhecimento interdisciplinar em novas possibilidades de produtos, serviços, negócios e mercados.</strong> Você parte de uma área, conecta outras, produz novos insights e aprende a convertê-los em propostas concretas de criação de valor.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#programas">Explorar programas</a>
+          <a class="btn btn-secondary" href="#metodo">Entender o método</a>
+        </div>
+        <div class="audience">
+          <div>Empresários que querem enxergar novas oportunidades</div>
+          <div>Profissionais que querem transformar conhecimento em empreendimento</div>
+        </div>
+      </div>
+    </section>
 
-  
-</section>
+    <section id="metodo">
+      <div class="container">
+        <div class="section-head center">
+          <div class="kicker">Método NexialBusiness</div>
+          <h2>Uma área. Múltiplas conexões. Novas possibilidades.</h2>
+          <p>O diferencial não está em acumular disciplinas. Está em conectá-las com propósito para gerar novos modelos de solução, produto, serviço, tecnologia, negócio e mercado.</p>
+        </div>
+        <div class="pillars">
+          <article class="pillar"><div class="num">01 · PARTIR</div><h3>Área focal</h3><p>Começamos por um campo de conhecimento que você já conhece, quer explorar ou deseja transformar em oportunidade.</p></article>
+          <article class="pillar"><div class="num">02 · CONECTAR</div><h3>Interconexão</h3><p>Cruzamos essa área com engenharia, IA, economia, direito, medicina, materiais, biotecnologia, meio ambiente e outras disciplinas relevantes.</p></article>
+          <article class="pillar"><div class="num">03 · GERAR</div><h3>Novos insights</h3><p>As interseções produzem perguntas, hipóteses e combinações que dificilmente aparecem quando cada área é estudada isoladamente.</p></article>
+          <article class="pillar"><div class="num">04 · CONVERTER</div><h3>Criação de valor</h3><p>Os insights são trabalhados como possibilidades de produtos, serviços, tecnologias, negócios, novos mercados e projetos empresariais.</p></article>
+        </div>
+      </div>
+    </section>
 
+    <section id="possibilidades">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">O que você pode construir</div>
+          <h2>Não apenas aprender. Criar possibilidades concretas.</h2>
+          <p>O programa foi desenhado para ampliar a capacidade de enxergar oportunidades e estruturar caminhos de criação empresarial a partir do conhecimento.</p>
+        </div>
+        <div class="outcomes">
+          <article class="outcome"><h3>Novos produtos</h3><p>Combinar conhecimentos para conceber produtos físicos, digitais, científicos ou tecnológicos com novas propostas de valor.</p></article>
+          <article class="outcome"><h3>Novos serviços</h3><p>Identificar necessidades ainda mal atendidas e desenhar serviços interdisciplinares com maior diferenciação.</p></article>
+          <article class="outcome"><h3>Novos negócios</h3><p>Transformar competências, problemas e oportunidades em modelos empresariais passíveis de validação.</p></article>
+          <article class="outcome"><h3>Novas empresas</h3><p>Explorar ideias com potencial para evoluir para projetos, startups ou empresas, individualmente ou em colaboração.</p></article>
+          <article class="outcome"><h3>Novos mercados</h3><p>Perceber espaços econômicos que surgem justamente na fronteira entre setores, profissões e tecnologias.</p></article>
+          <article class="outcome"><h3>Novas trajetórias</h3><p>Reposicionar sua experiência profissional para atuar como criador, empreendedor, empresário ou liderança de inovação.</p></article>
+        </div>
+      </div>
+    </section>
 
-    <section id="courses" class="courses">
+    <section id="network">
+      <div class="container network-wrap">
+        <article class="network-card">
+          <div class="kicker">Além da sala de aula</div>
+          <h3>Conhecimento ganha força quando encontra outras pessoas.</h3>
+          <p>A proposta NexialBusiness inclui ambiente de conexão entre alunos, professores, profissionais e empreendedores. O objetivo é favorecer encontros entre competências complementares e ampliar as possibilidades de colaboração.</p>
+          <ul class="feature-list">
+            <li>Conhecer ideias e projetos desenvolvidos por outros participantes.</li>
+            <li>Identificar competências complementares para projetos e startups.</li>
+            <li>Explorar colaborações acadêmicas, tecnológicas ou empresariais.</li>
+            <li>Participar, quando houver interesse mútuo e condições adequadas, de iniciativas criadas por outros membros da rede.</li>
+          </ul>
+        </article>
+        <article class="authority-card">
+          <div class="kicker">Autoridade pela interconexão</div>
+          <h3>Uma formação construída a partir de uma trajetória genuinamente multidisciplinar.</h3>
+          <p>A NexialBusiness nasce da integração prática entre <span class="accent">medicina, engenharias, computação, economia, administração, direito, ciência, tecnologia e empreendedorismo</span>.</p>
+          <p>Em vez de organizar o conhecimento em compartimentos, o método foi concebido para trabalhar justamente nas fronteiras entre áreas — onde surgem muitas das oportunidades de inovação.</p>
+          <p><strong>Não é uma nova graduação. É uma nova forma de usar o conhecimento que você já possui — e de acessar formas de pensar que normalmente permanecem separadas.</strong></p>
+        </article>
+      </div>
+    </section>
 
-    <section id="courses" class="courses">
+    <section class="statement">
+      <div class="container">
+        <div class="big">Você não precisa ter dez profissões. Mas pode aprender a enxergar um problema através de dez formas diferentes de pensar.</div>
+        <p>Essa capacidade de atravessar fronteiras disciplinares é o centro da proposta NexialBusiness — e pode abrir caminhos que uma formação exclusivamente vertical nem sempre foi desenhada para explorar.</p>
+      </div>
+    </section>
 
-  <div class="course-card">
-    <h3>Medicina NexialBusiness</h3>
-    <p>Inovação e tecnologia aplicadas à saúde.</p>
-    <a href="medicina-nexialbusiness.html">Saiba Mais</a>
-  </div>
-<div class="course-card">
-  <h3>Engenharias NexialBusiness</h3>
-  <p>Ciência, tecnologia e inovação para soluções aplicadas em múltiplas engenharias.</p>
-  <a href="index_engenharias_ciencias_nexialbusiness.html">Saiba Mais</a>
-</div>
- <div class="course-card">
-  <h3>Ciência da Computação NexialBusiness</h3>
-  <p>Tecnologia, IA e inovação digital com impacto social e empreendedor.</p>
-  <a href="landing_completa_ciencia_da_computacao_nexialbusiness.html">Saiba Mais</a>
-</div>
+    <section id="programas">
+      <div class="container">
+        <div class="section-head center">
+          <div class="kicker">Portas de entrada</div>
+          <h2>Escolha uma área. Expanda suas fronteiras.</h2>
+          <p>Cada programa parte de um campo central e o conecta a outras disciplinas para explorar novas possibilidades de inovação, tecnologia, empreendimento e mercado.</p>
+        </div>
+        <div class="courses-grid">
+          <article class="course-card"><div class="course-tag">Saúde · Tecnologia · Negócios</div><h3>Medicina NexialBusiness</h3><p>Medicina conectada a engenharia, IA, materiais, economia, administração, biotecnologia, direito e ciência ambiental.</p><a href="medicina-nexialbusiness.html">Conhecer programa →</a></article>
+          <article class="course-card"><div class="course-tag">Produtos · Sistemas · Indústria</div><h3>Engenharias NexialBusiness</h3><p>Integração entre mecânica, automação, materiais, ambiente, agronomia, biotecnologia, medicina, economia e direito.</p><a href="index_engenharias_ciencias_nexialbusiness.html">Conhecer programa →</a></article>
+          <article class="course-card"><div class="course-tag">IA · Estratégia · Criação</div><h3>IA NexialBusiness</h3><p>Inteligência artificial como ferramenta de criação, automação, análise, inovação e desenvolvimento de novos modelos de negócio.</p><a href="ia-nexialbusiness.html">Conhecer programa →</a></article>
+          <article class="course-card"><div class="course-tag">Software · Dados · Mercados</div><h3>Ciência da Computação NexialBusiness</h3><p>Computação conectada às engenharias, direito e justiça, materiais, economia, medicina, indústria, varejo, biotecnologia e ambiente.</p><a href="landing_completa_ciencia_da_computacao_nexialbusiness.html">Conhecer programa →</a></article>
+          <article class="course-card"><div class="course-tag">Regulação · Tecnologia · Empresa</div><h3>Direito & Justiça NexialBusiness</h3><p>Novos serviços, LegalTech, governança, prevenção de conflitos, inovação jurídica e interfaces entre regulação e atividade empresarial.</p><a href="direito-nexialbusiness.html">Conhecer programa →</a></article>
+          <article class="course-card"><div class="course-tag">Agro · Tecnologia · Bioeconomia</div><h3>Agronomia & Medicina Veterinária NexialBusiness</h3><p>Produção, saúde animal, biotecnologia, automação, dados, ambiente e novos modelos de negócio aplicados ao campo.</p><a href="index_agrovet_vet_nexialbusiness.html">Conhecer programa →</a></article>
+          <article class="course-card"><div class="course-tag">Bioengenharia · Saúde · Indústria</div><h3>Biotecnologia NexialBusiness</h3><p>Biologia aplicada, bioengenharia, materiais, saúde, agricultura, indústria e inovação baseada em conhecimento científico.</p><a href="biotecnologia-nexialbusiness.html">Conhecer programa →</a></article>
+          <article class="course-card"><div class="course-tag">Clima · Tecnologia · Negócios</div><h3>Meio Ambiente NexialBusiness</h3><p>Ciência ambiental conectada a tecnologia, engenharia, economia, saúde, dados, produção e soluções empresariais sustentáveis.</p><a href="meio-ambiente-nexialbusiness.html">Conhecer programa →</a></article>
+          <article class="course-card"><div class="course-tag">Materiais · Nano · Indústria</div><h3>Ciência dos Materiais NexialBusiness</h3><p>Materiais avançados, nanotecnologia, fabricação, computação, medicina, energia e oportunidades de inovação industrial.</p><a href="landing_completa_ciência_dos_materiais_nexialbusiness.html">Conhecer programa →</a></article>
+        </div>
+      </div>
+    </section>
 
-
-<div class="course-card">
-  <h3>Agronomia & Medicina Veterinária NexialBusiness</h3>
-  <p>Inovação no campo e na saúde animal com visão empreendedora e tecnológica.</p>
-  <a href="index_agrovet_vet_nexialbusiness.html">Saiba Mais</a>
-</div>
-
- 
- 
-  <div class="course-card">
-    <h3>Robótica NexialBusiness</h3>
-    <p>Criação de robôs inteligentes aplicados à saúde, indústria e educação.</p>
-    <a href="landing_completa_robotica.html">Saiba Mais</a>
-  </div>
-
-  <div class="course-card">
-    <h3>Engenharia Mecânica NexialBusiness</h3>
-    <p>Soluções industriais e automação avançada.</p>
-    <a href="landing_completa_engenharia_mecânica_nexialbusiness.html">Saiba Mais</a>
-  </div>
-
-
-  <div class="course-card">
-    <h3>Ciência dos Materiais NexialBusiness</h3>
-    <p>Materiais avançados, nanotecnologia e inovação.</p>
-    <a href="landing_completa_ciência_dos_materiais_nexialbusiness.html">Saiba Mais</a>
-  </div>
-
-  <div class="course-card">
-    <h3>Direito NexialBusiness</h3>
-    <p>Direito digital, inovação jurídica e empreendedorismo normativo.</p>
-    <a href="direito-nexialbusiness.html">Saiba Mais</a>
-  </div>
-
-  <div class="course-card">
-    <h3>Ciência da Computação NexialBusiness</h3>
-    <p>Computação aplicada, algoritmos inteligentes e soluções disruptivas.</p>
-    <a href="ciencia-da-computacao-nexialbusiness.html">Saiba Mais</a>
-  </div>
-
-  <div class="course-card">
-    <h3>IA NexialBusiness</h3>
-    <p>Negócios e inovações com inteligência artificial aplicada.</p>
-    <a href="ia-nexialbusiness.html">Saiba Mais</a>
-  </div>
-
-  <div class="course-card">
-    <h3>Meio Ambiente NexialBusiness</h3>
-    <p>Ciência ambiental, clima e sustentabilidade estratégica.</p>
-    <a href="meio-ambiente-nexialbusiness.html">Saiba Mais</a>
-  </div>
-<div class="course-card">
-  <h3>Biotecnologia NexialBusiness</h3>
-  <p>Empreendedorismo com DNA, bioengenharia e soluções sustentáveis para saúde e indústria.</p>
-  <a href="biotecnologia-nexialbusiness.html">Saiba Mais</a>
-</div>
-
-
-
-</section>
-
-</section>
-
-
+    <section class="final-cta">
+      <div class="container">
+        <div class="section-head center">
+          <div class="kicker">NexialBusiness</div>
+          <h2>Pense além da sua profissão. Crie além do seu mercado.</h2>
+          <p>Se você quer transformar conhecimento em possibilidades de produto, serviço, negócio, empresa ou novo mercado, conheça a formação e descubra qual programa faz mais sentido para sua trajetória.</p>
+          <a class="btn btn-primary" href="mailto:nexialbusiness@proton.me?subject=Quero conhecer a NexialBusiness">Quero conhecer a NexialBusiness</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>NexialBusiness Academy © 2025 | Todos os direitos reservados</p>
-    <p><a href="#">Política de Privacidade</a></p>
+    <div class="container">
+      <div class="footer-row">
+        <strong>NexialBusiness</strong>
+        <span><a href="mailto:nexialbusiness@proton.me">nexialbusiness@proton.me</a></span>
+      </div>
+      <div class="disclaimer">Os programas NexialBusiness possuem finalidade educacional, interdisciplinar, científica, tecnológica e empresarial. A participação ou conclusão não confere graduação, título profissional, especialização profissional, registro em conselho de classe ou habilitação para o exercício de profissão regulamentada. A formação amplia repertório e possibilidades de criação, conexão e desenvolvimento de projetos, mas não garante constituição de empresa, sociedade, investimento, faturamento, lançamento de produto ou participação em startups.</div>
+    </div>
   </footer>
-
 </body>
 </html>
